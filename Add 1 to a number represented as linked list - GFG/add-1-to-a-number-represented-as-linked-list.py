@@ -12,20 +12,15 @@ class Solution:
     def addOne(self, head):
         
         def reverseList(head):
-            if not head:
-                return
-            curNode = head
-            prevNode = head
-            nextNode = head.next
-            curNode.next = None
-          
-            while(nextNode):
-                curNode = nextNode
-                nextNode = nextNode.next
-                curNode.next = prevNode
-                prevNode = curNode
-          
-            return curNode
+            prev, curr = None, head
+        
+            while curr:
+                temp = curr.next
+                curr.next = prev
+                prev = curr
+                curr = temp
+            
+            return prev
         
         head = reverseList(head)
         k = head
