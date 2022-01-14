@@ -3,7 +3,6 @@ class Solution:
         for i in range(len(b)):
             if a[i] != b[i]:
                 return i
-            
         return n-1
 
 #{ 
