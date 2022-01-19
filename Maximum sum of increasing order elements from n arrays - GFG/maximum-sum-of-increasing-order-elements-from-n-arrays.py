@@ -1,9 +1,9 @@
 #User function Template for python3
 
 def maximumSum (n, m, arr) : 
-    a=[]
-    temp=max(arr[n-1])
-    sum=temp
+    a = []
+    temp = max(arr[n-1])
+    sum1 = temp
     
     for i in range(n-1,0,-1):
         for item in arr[i-1]:
@@ -13,11 +13,11 @@ def maximumSum (n, m, arr) :
         if(len(a)==0):
             return 0
             
-        temp=max(a)
-        sum+=temp
-        a=[]
+        temp = max(a)
+        sum1 += temp
+        a = []
         
-    return sum
+    return sum1
 
 
 #{ 
