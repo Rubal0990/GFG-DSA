@@ -1,16 +1,14 @@
 #User function Template for python3
 class Solution:
 	def countSubstr(self, S):
-		count = 0
-		res = 1
-        n = len(S)
+		res = 0
         
-        for i in range(n):
+        for i in range(len(S)):
             if S[i] == '1':
-                count += 1
-            res = int(count*(count-1)/2)
+                res += 1
         
-        return res
+        # Return count of possible pairs of 1's
+        return res*(res - 1) // 2
 
 #{ 
 #  Driver Code Starts
