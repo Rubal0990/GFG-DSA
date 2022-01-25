@@ -1,25 +1,36 @@
 #User function Template for python3
 
 class Solution:
+    def swap(self, arr, ind1, ind2):
+        temp = arr[ind1]
+        arr[ind1] = arr[ind2]
+        arr[ind2] = temp
+        
+    def reverse(self, arr, beg, end):
+        while beg < end:
+            self.swap(arr, beg, end)
+            beg += 1
+            end -= 1
+    
     def nextPermutation(self, N, arr):
-        mn=float("inf")
-        for i in range (-2,-N-1,-1):
-            if i== -N and arr[0]>arr[1]:
-                arr.sort()
-                break
-            if arr[i]<arr[i+1]:
-                k=arr[i+1:]
-                for j in k:
-                    if j>arr[i]:
-                        mn=min(mn,j)
-                ind=max(idx for idx, val in enumerate(arr) if val == mn)
-                t=arr[i]
-                arr[i]=arr[ind]
-                arr[ind]=t
-                k=arr[i+1:]
-                k.sort()
-                arr[:]=arr[0:i+1] + k
-                break
+        if N == 1:
+            return arr
+        if N == 2:
+            return self.swap(arr, 0, 1)
+            
+        dec = N - 2
+        while dec >=0 and arr[dec] >= arr[dec + 1]:
+            dec -= 1
+        self.reverse(arr, dec + 1, N - 1)
+        
+        if dec == -1:
+            return arr
+        
+        next_num = dec + 1
+        while next_num < N and arr[next_num] <= arr[dec]:
+            next_num += 1
+        self.swap(arr, next_num, dec)
+        
         return arr
 
 #{ 
