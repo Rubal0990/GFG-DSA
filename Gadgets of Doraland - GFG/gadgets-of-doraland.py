@@ -3,19 +3,24 @@ from collections import Counter
 
 class Solution:
     def TopK(self, array, k):
-        d={}
-        x=[]
-        out=[]
+        d = {}
+        x = []
+        out = []
+        
         for i in array:
             if i in d:
                 d[i] += 1
             else:
                 d[i] = 1
+        
         for i in d:
-            x.append([i,d[i]])
-        x.sort(reverse=True,key=lambda x:(x[1],x[0]))
+            x.append([i, d[i]])
+        
+        x.sort(reverse=True, key=lambda x:(x[1], x[0]))
+        
         for i in range(k):
             out.append(x[i][0])
+            
         return out
 
 
