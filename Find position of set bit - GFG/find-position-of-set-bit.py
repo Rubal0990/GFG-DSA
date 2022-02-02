@@ -1,12 +1,21 @@
 #User function Template for python3
 
+def dectobin(n):
+   return bin(n).replace("0b","")
+
 class Solution:
     def findPosition(self, N):
-        for i in range(30):
-            if 1<<i > N:
-                return -1
-            elif 1<<i == N:
-                return i+1
+        n=dectobin(N)
+        count=0
+        
+        for i in n:
+            if i=="1":
+                count+=1
+                
+        if count == 1:
+            return len(n)
+        else:
+            return -1
 
 #{ 
 #  Driver Code Starts
