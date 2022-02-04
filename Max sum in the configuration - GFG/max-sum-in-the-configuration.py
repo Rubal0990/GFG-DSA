@@ -10,7 +10,7 @@ def max_sum(a,n):
     maxvalue = curmax
     
     for j in range(n-1) :
-        curmax = curmax - (arrsum - (n*arr[j]))
+        curmax -= (arrsum - (n*arr[j]))
         if curmax > maxvalue :
             maxvalue = curmax
             
