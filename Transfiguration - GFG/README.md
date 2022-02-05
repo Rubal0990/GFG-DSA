@@ -1,5 +1,5 @@
 # Transfiguration
-##  Easy 
+## Easy 
 <div class="problem-statement">
                 <p></p><p><span style="font-size:18px">Professor McGonagall teaches transfiguration at Hogwarts. She has given Harry the task of changing himself into a cat. She explains that the trick is to analyze your own DNA and change it into the DNA&nbsp;of a cat. The transfigure spell can be used to pick any one character from the DNA string, remove it and insert it in the beginning.&nbsp;<br>
 Help Harry calculates minimum number of times he needs to use the spell to change himself into a cat.</span></p>
