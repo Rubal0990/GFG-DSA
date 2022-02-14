@@ -3,26 +3,21 @@
 class Solution:
     def findTwoElement( self,arr, n): 
         arr.sort()
-        ans = []
-        s = 0
-        
-        for i in arr:
-            s += i
-        
-        su = (n * (n + 1)) // 2
+        repeat = 0
         
         for i in range(n-1):
             if arr[i] == arr[i+1]:
-                hold = arr[i]
-                break
+                repeat = arr[i]
+                
+        arr2 = set([i for i in range(1, n+1)])
+        arr = set(arr)
+        missing = arr2.difference(arr)
+        miss = 0
         
-        bach = su - s
-        p = hold + bach
+        for i in missing:
+            miss = i
         
-        ans.append(hold)
-        ans.append(p)
-        
-        return(ans)
+        return repeat, miss
 
 #{ 
 #  Driver Code Starts
