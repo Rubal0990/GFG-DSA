@@ -9,34 +9,32 @@ class Node:
         self.right = None
         '''
 class Solution:
-    number = 0
-    def rec_count_vaccine(self, root):
-        if root is None:
-            return True, False
-        
-        L_got_vac, L_own_vac = self.rec_count_vaccine(root.left)
-        R_got_vac, R_own_vac = self.rec_count_vaccine(root.right)
-        
-        root_got_vac = False
-        root_own_vac = False
-        
-        if L_own_vac or R_own_vac:
-            root_got_vac = True
+    v = 0
+    
+    def solve(self, node):
+        if node == None:
+            return 0
             
-        if L_got_vac == False or R_got_vac == False:
-            root_own_vac = True
-            root_got_vac = True
-            self.number += 1
-            
-        return root_got_vac, root_own_vac
+        l = self.solve(node.left)
+        r = self.solve(node.right)
+        
+        if l == 1 or r == 1:
+            self.v += 1
+        if l == 0:
+            return r % 3 + 1
+        if r == 0:
+            return l % 3 + 1
+        
+        return min(l, r) % 3 + 1
+    
     
     def supplyVaccine(self, root):
-        got_vac, own_vac = self.rec_count_vaccine(root)
+        m = self.solve(root)
         
-        if got_vac == False:
-            self.number += 1
+        if m == 1:
+            self.v += 1
         
-        return self.number
+        return self.v
 
 
 #{ 
