@@ -2,10 +2,13 @@
 
 class Solution:
     def prank(self, a, n): 
-        b = a.copy()
-        
         for i in range(n):
-        	a[i] = b[b[i]]
+            a[i] += (a[a[i]] % n) * n
+            
+        for i in range(n):
+            a[i] //= n
+
+
 
 #{ 
 #  Driver Code Starts
