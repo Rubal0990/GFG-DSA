@@ -11,7 +11,9 @@ def calculate (arr, n) :
             z[i] -= 1
             
     return ans
-
+    
+    # ####OR
+    # return sum([arr[x+1:].count(arr[x]) for x in range(n-1)])
 
 
 #{ 
