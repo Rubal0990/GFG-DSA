@@ -1,20 +1,20 @@
 class Solution:
 	def sortedArrayToBST(self, nums):
-	    s = 0
-        e = len(nums) - 1
-        root = self.makingtree(nums, s, e, [])
+	    start = 0
+        end = len(nums) - 1
+        root = self.makingtree(nums, start, end, [])
         
         return root
         
-    def makingtree(self, nums, s, e, ans):
-        if s > e:
+    def makingtree(self, nums, start, end, ans):
+        if start > end:
             return
         
-        mid = (s + e) // 2
+        mid = (start + end) // 2
         root = (nums[mid])
         ans.append(root)
-        self.makingtree(nums, s, mid-1, ans)
-        self.makingtree(nums, mid+1, e, ans)
+        self.makingtree(nums, start, mid-1, ans)
+        self.makingtree(nums, mid+1, end, ans)
         
         return ans
 
