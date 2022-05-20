@@ -2,7 +2,7 @@
 
 class Solution:
     def doUnion(self, a, n, b, m):
-        return len(list(set(a + b)))
+        return len(set(a + b))
 
 #{ 
 #  Driver Code Starts
