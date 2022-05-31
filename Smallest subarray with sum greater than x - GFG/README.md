@@ -1,5 +1,5 @@
 # Smallest subarray with sum greater than x
-## Easy 
+##  Easy 
 <div class="problem-statement">
                 <p></p><p><span style="font-size:18px">Given an array of integers (A[]) &nbsp;and a number x, find the smallest subarray with sum greater than the given value.</span></p>
 
