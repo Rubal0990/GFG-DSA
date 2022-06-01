@@ -2,23 +2,19 @@
 
 class Solution:
     def shiftPile(self, N, n):
+        arr = []
+        self.solve('1', '2', '3', N, arr)
+        return arr[n-1]
         
-        def move(k, frm, spare, to):
-            nonlocal n
-            if k == 0:
-                return None
-            
-            r = move(k-1, frm, to, spare)
-            if r:
-                return r
-            
-            n -= 1
-            if n == 0:
-                return [frm, to]
-            
-            return move(k-1, spare, frm, to)
+    def solve(self, src, temp, dest, N, arr):
+        if N == 0:
+            return
         
-        return move(N, "1", "2", "3")
+        self.solve(src, dest, temp, N-1, arr)
+        arr.append([src, dest])
+        
+        self.solve(temp, src, dest, N-1, arr)
+    
 
 #{ 
 #  Driver Code Starts
