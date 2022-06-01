@@ -1,5 +1,5 @@
 # Help the Old Man!!!
-## Easy 
+##  Easy 
 <div class="problem-statement">
                 <p></p><p><span style="font-size:18px">A poor old man works in a palace for a living. One day the old man's wife met with an accident. She needed an immediate operation but the old man's savings were not enough for the operation. He went running to the king to beg for money. The king told that he will not only pay the full amount for the operation but also double his salary. But for that the old man had to pass a test. The king showed him a pile of glass plates kept one above another, each one being smaller than the one beneath. The plates were kept in box 1. He had to transfer the plates to box 3 using box 2. However, there were some constraints. The old man could only take one plate at a time and he could only place a&nbsp;smaller plate on top of a larger plate. He could take a plate only from the top. Help the old man do so. There are <strong>N</strong> plates and he has to tell the <strong>n</strong>th move in the format <strong>(i, j)</strong> where a plate is being moved <strong>from ith box to jth box.</strong></span></p>
 
