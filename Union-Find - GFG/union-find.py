@@ -2,30 +2,35 @@
 
 
 class Solution:
-    @staticmethod
-    def find(par, r):
-        while par[r] != r:
-            r = par[r]
-        return r
+    def findRoot(self, x, par):
+        if x == par[x]: 
+            return x
+        return self.findRoot(par[x], par)
+    
+    def union_(self, a, b, par, rank1):
+        root_a = self.findRoot(a, par)
+        root_b = self.findRoot(b, par) 
+    
+        rank_root_a = rank1[root_a] 
+        rank_root_b = rank1[root_b] 
         
-    @staticmethod
-    def compress(par, x, r):
-        while x != r:
-            par[x] = r
-            x = par[x]
-            
-    def union_(self,a,b,par,rank1):
-        r1 = self.find(par, a)
-        r2 = self.find(par, b)
-        
-        if r1 != r2:
-            par[r1] = r2
-            
-        self.compress(par, a, r2)
-        self.compress(par, b, r2)
-        
+        if rank_root_a > rank_root_b:
+            par[root_b] = root_a
+            rank1[root_a] += rank1[root_b]
+        else:
+            par[root_a] = root_b
+            rank1[root_b] += rank1[root_a]
+    
+        return
+    
     def isConnected(self,x,y,par,rank1):
-        return self.find(par, x) == self.find(par, y)
+        
+        root_x = self.findRoot(x, par) 
+        root_y = self.findRoot(y, par)  
+        if root_x == root_y:
+            return True
+        else:
+            return False
 
 #{ 
 #  Driver Code Starts
