@@ -16,9 +16,9 @@ class Solution:
                 return int(k > 0)
 
             v = 0
-            minv, maxv = 1, k - n+1
-            for x in range(minv, maxv+1):
-                v += count(n-1, k-x)
+            minv, maxv = 1, k - n + 1
+            for x in range(minv, maxv + 1):
+                v += count(n - 1, k - x)
             return v
             
         return count(n, k)
