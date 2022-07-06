@@ -12,17 +12,6 @@ class Node:
 from queue import Queue
 
 class Solution:
-    def helper(root, dic, diagonal):
-        if root==None:
-            return
-        if diagonal in dic:
-            dic[diagonal].extend([root.data])
-        else:
-            dic[diagonal]=[root.data]
-        helper(root.left,dic,diagonal+1)
-        helper(root.right,dic,diagonal)
-        return dic
-   
     def diagonal(self, root):
         q = [root]
         
