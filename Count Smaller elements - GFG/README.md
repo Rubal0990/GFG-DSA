@@ -1,49 +1,36 @@
-# A Special Keyboard
-## Medium 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Imagine you have a special keyboard with all keys in a single row. The layout of characters on a keyboard is denoted by a string <strong>S1</strong> of length 26. S1 is indexed from 0 to 25. Initially, your finger is at index 0.<br>
-To type a character, you have to move your finger to the index of the desired character. The time taken to move your finger from index i to index j is |j-i|, where || denotes absolute value.Find the time taken to type the string <strong>S2 </strong>with the given keyboard layout.</span></p>
+# Count Smaller elements
+## Hard 
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an array <strong>Arr&nbsp;</strong>of size <strong>N</strong>&nbsp;containing&nbsp;positive integers. Count number of smaller elements on right side of each array.</span></p>
 
-<p><br>
-<span style="font-size:18px"><strong>Example 1:</strong></span></p>
+<p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
-<pre><span style="font-size:18px"><strong>Input</strong>: 
-S1 = "abcdefghijklmnopqrstuvwxyz"
-S2 = "cba"
-<strong>Output</strong>: 
-4
-<strong>Explanation</strong>:
-Initially we are at index 0. To type 'c',
-it will take a time of abs(0-2) = 2. To, type
-'b' next, it will take abs(2-1) = 1. And, for
-'a', it will take abs(1-0) = 1 unit time.
-So, total time = 2+1+1 = 4.</span>
-</pre>
+<pre><span style="font-size:18px"><strong>Input:
+</strong>N = 7
+Arr[] = {12, 1, 2, 3, 0, 11, 4}
+<strong>Output: </strong>6 1 1 1 0 1 0
+<strong>Explanation:</strong> There are 6 elements right
+after 12. There are 1 element right after
+1. And so on.
+</span></pre>
 
 <p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
 
-<pre><span style="font-size:18px"><strong>Input</strong>: 
-S1 = "zyxwvutsrqponmlkjihgfedcba"
-S2 = "a"
-<strong>Output</strong>: 
-25
-<strong>Explanation</strong>:
-'a' is at index 25. So, the time taken
-to type 'a' will be abs(0-25) = 25.</span>
-</pre>
+<pre><span style="font-size:18px"><strong>Input:
+</strong>N = 5
+Arr[] = {1, 2, 3, 4, 5}
+<strong>Output:</strong> 0 0 0 0 0
+<strong>Explanation:</strong>&nbsp;There are 0 elements right
+after 1. There are 0 elements right after
+2. And so on.
+</span></pre>
 
-<p><br>
-<strong><span style="font-size:18px">Your Task:</span></strong><br>
-<span style="font-size:18px">You don't need to read input or print anything.&nbsp;You only need to complete the function<strong> findTime()&nbsp;</strong>that takes two strings S1, and S2 as input and returns an integer denoting time taken to type the string S2.</span></p>
+<p><span style="font-size:18px"><strong>Your Task:</strong><br>
+You don't need to read input or print anything. Your task is to complete the function&nbsp;<strong>constructLowerArray()</strong>&nbsp;which takes the&nbsp;array of&nbsp;integers&nbsp;<strong>arr </strong>and&nbsp;<strong>n&nbsp;</strong>as parameters and returns an array of integers denoting the answer.</span></p>
 
-<p><br>
-<span style="font-size:18px"><strong>Expected Time Complexity:</strong> &nbsp;O(|S2|)<br>
-<strong>Expected Auxilliary Space:</strong> O(1)</span><br>
-&nbsp;</p>
+<p><span style="font-size:18px"><strong>Expected Time Complexity:</strong>&nbsp;O(N*logN)<br>
+<strong>Expected Auxiliary Space:</strong>&nbsp;O(N)</span></p>
 
-<p><span style="font-size:18px"><strong>Constraints:</strong></span><br>
-<span style="font-size:18px">1 &lt; |S2| &lt; 10<sup>5</sup><br>
-Length of S1 is 26<br>
-S1 contains all 26 alphabets in lower case</span></p>
- <p></p>
-            </div>
+<p><span style="font-size:18px"><strong>Constraints:</strong><br>
+1 ≤ N ≤ 10<sup>6</sup><br>
+0 ≤ Arr<sub>i&nbsp; </sub>≤ 10<sup>8</sup></span></p>
+</div>
