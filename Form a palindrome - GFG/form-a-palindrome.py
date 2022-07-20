@@ -1,49 +1,38 @@
-#User function Template for python3
+# User function Template for python3
 
 class Solution:
-    def findMinInsertions(self, s1):
-        dp = [[0 for i in range(len(s1)+1)] for j in range(len(s1)+1)]
-        s2 = s1[::-1]
-        for i in range(len(s1)+1):
-            dp[i][0] = 0
-            
-        for i in range(len(s1)+1):
-            dp[0][i] = 0
-            
-        for i in range(1, len(s1)+1):
-            for j in range(1, len(s1)+1):
-                if s1[i-1] == s2[j-1]:
-                    dp[i][j] = 1 + dp[i-1][j-1]
+    def countMin(self, s):
+        l = len(s)
+        dp = [[0] * (l + 1) for i in range(l + 1)]
+
+        for i in range(l):
+            dp[i][i] = 1
+
+        for i in range(l - 1, -1, -1):
+            for j in range(i + 1, l):
+                if s[i] == s[j]:  #
+                    if i + 1 == j:
+                        dp[i][j] = 2
+                    elif i != j:
+                        dp[i][j] = dp[i + 1][j - 1] + 2
                 else:
-                    dp[i][j] = max(dp[i][j-1], dp[i-1][j])
-                    
-        return len(s1) - dp[len(s1)][len(s1)]
-        
-def f(i, j, s1, s2, dp):
-    
-    if i < 0:
-        return 0
-    if j < 0:
-        return 0
-    if dp[i][j] != -1:
-        return dp[i][j]
-        
-    if s1[i] == s2[j]:
-        dp[i][j] = 1 + f(i-1, j-1, s1, s2, dp)
-        return dp[i][j]
-    else:
-        dp[i][j]= max(f(i, j-1, s1, s2, dp), f(i-1, j, s1, s2, dp))
-        return dp[i][j]
+                    dp[i][j] = max(dp[i + 1][j], dp[i][j - 1])
 
-#{ 
-#  Driver Code Starts
-#Initial Template for Python 3
+        return len(s) - dp[0][l - 1]
 
-if __name__=='__main__':
-    t=int(input())
+
+# {
+# Driver Code Starts
+# Initial Template for Python 3
+
+if __name__ == '__main__':
+
+    t = int(input())
+
     for _ in range(t):
-        
-        S = input().strip()
-        ob=Solution()
-        print(ob.findMinInsertions(S))
+        Str = input()
+
+        solObj = Solution()
+
+        print(solObj.countMin(Str))
 # } Driver Code Ends
