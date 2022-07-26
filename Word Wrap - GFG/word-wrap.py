@@ -2,35 +2,28 @@
 import math
 
 class Solution:
-    def rec_ww(self, nums, N, K, index, mem):
-		if index == N - 1:
-            return 0
-            
-        if mem[index] != -1:
-            return mem[index]
-            
-        _sum = 0
-        _cost = math.inf
+    def solveWordWrap(self, nums, k):
+        n = len(nums)
+        dp = [[-1] * (k+1) for _ in range(n+1)]
         
-        for i in range(index, N):
-            _sum += nums[i]
+        def recurse(index, cur_limit):
+            if index == n:
+                return 0
             
-            if (_sum + i-index) <= K:
-                if i == N-1:
-                    _cost = 0
-                    break
-                spaces = K - (_sum + i-index)
-                _cost = min(_cost, spaces**2 + self.rec_ww(nums, N, K, i+1, mem))
+            if dp[index][cur_limit] != -1:
+                return dp[index][cur_limit]
+            
+            if nums[index] <= cur_limit:
+                take = recurse(index + 1, cur_limit - nums[index] - 1)
+                not_take = (cur_limit + 1) * (cur_limit + 1) + recurse(index + 1, k - nums[index] - 1)
+                dp[index][cur_limit] = min(take, not_take)
             else:
-                break
+                not_take = (cur_limit + 1) * (cur_limit + 1) + recurse(index + 1, k - nums[index] - 1)
+                dp[index][cur_limit] = not_take
             
-        mem[index] = _cost
-        return mem[index]
-
-	def solveWordWrap(self, nums, K):
-	    N = len(nums)
-	    mem = [-1] * N
-		return self.rec_ww(nums, N, K, 0, mem)
+            return dp[index][cur_limit]
+        
+        return recurse(0, k)
 
 #{ 
 #  Driver Code Starts
