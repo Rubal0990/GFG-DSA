@@ -2,9 +2,7 @@
 
 class Solution:
     def swap(self, arr, ind1, ind2):
-        temp = arr[ind1]
-        arr[ind1] = arr[ind2]
-        arr[ind2] = temp
+        arr[ind1], arr[ind2] = arr[ind2], arr[ind1]
         
     def reverse(self, arr, beg, end):
         while beg < end:
@@ -15,22 +13,23 @@ class Solution:
     def nextPermutation(self, N, arr):
         if N == 1:
             return arr
+        
         if N == 2:
             return self.swap(arr, 0, 1)
             
         dec = N - 2
-        while dec >=0 and arr[dec] >= arr[dec + 1]:
+        while dec>=0 and arr[dec]>=arr[dec+1]:
             dec -= 1
-        self.reverse(arr, dec + 1, N - 1)
         
+        self.reverse(arr, dec+1, N-1)
         if dec == -1:
             return arr
         
         next_num = dec + 1
-        while next_num < N and arr[next_num] <= arr[dec]:
+        while next_num<N and arr[next_num]<=arr[dec]:
             next_num += 1
-        self.swap(arr, next_num, dec)
         
+        self.swap(arr, next_num, dec)
         return arr
 
 #{ 
