@@ -10,7 +10,7 @@ class Node:
 '''
 
 def findIntersection(head1, head2):
-    if head1==None or head2==None:
+    if head1 == None or head2 == None:
         return None
 
     l1 = linkedList()
