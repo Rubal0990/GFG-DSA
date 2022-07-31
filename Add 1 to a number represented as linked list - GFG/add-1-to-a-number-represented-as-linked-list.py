@@ -10,35 +10,16 @@ class Node:
 
 class Solution:
     def addOne(self, head):
+        s = ""
+        curr = head
         
-        def reverseList(head):
-            prev, curr = None, head
+        while curr:
+            s += str(curr.data)
+            curr = curr.next
         
-            while curr:
-                temp = curr.next
-                curr.next = prev
-                prev = curr
-                curr = temp
-            
-            return prev
-        
-        head = reverseList(head)
-        k = head
-        carry = 0
-        prev = None
-        head.data += 1
-      
-        while(head != None) and (head.data > 9 or carry > 0):
-            prev = head
-            head.data += carry
-            carry = head.data // 10
-            head.data = head.data % 10
-            head = head.next
-      
-        if carry > 0:
-            prev.next = Node(carry)
-            
-        return reverseList(k)
+        s = str(int(s) + 1)
+        node = Node(int(s))
+        return node
         
 
 #{ 
