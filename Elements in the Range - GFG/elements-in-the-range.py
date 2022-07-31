@@ -1,13 +1,10 @@
 class Solution:
     def check_elements(self, arr, n, A, B):
-        mask, cnt = 0, 0
+        for i in range(A, B+1):
+            if i not in arr:
+                return False
         
-        for e in arr:
-            if B >= e >= A and (1<<e) & mask == 0:
-                mask |= 1<<e 
-                cnt += 1
-        
-        return cnt == B-A+1
+        return True
 
 
 #{ 
