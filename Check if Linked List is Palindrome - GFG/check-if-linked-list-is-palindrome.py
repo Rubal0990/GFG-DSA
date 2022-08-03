@@ -24,10 +24,7 @@ class Solution:
            s.append(head.data)
            head = head.next
         
-        if s == s[::-1]:
-            return 1
-        else:
-            return 0
+        return s == s[::-1]
 
 
 #{ 
