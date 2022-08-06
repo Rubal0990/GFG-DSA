@@ -13,37 +13,22 @@ return: the head of the copied linked list the #output will be 1 if successfully
 
 class Solution:
     def copyList(self, head):
-        if head == None or head.next == None:
-            return head
+        oldToCopy = {None : None}
         
-        a = head
-        while a != None:
-            temp = a.next
-            a.next = Node(a.data)
-            a.next.next = temp
-            a = temp
+        curr = head
+        while curr:
+            copy = Node(curr.data)
+            oldToCopy[curr] = copy
+            curr = curr.next
         
-        a = head
-        dup_head = a.next
-        prev_dup = None
-        while a != None:
-            a.next.arb = a.arb.next if a.arb != None else None
-            a = a.next.next
-
-        b = head
-        while b != None:
-            temp = b.next.next
-            b.next.next = None
-            if prev_dup != None:
-                prev_dup.next = b.next
-            
-            prev_dup = b.next
-            b.next = temp
-            b = temp
+        curr = head
+        while curr:
+            copy = oldToCopy[curr]
+            copy.next = oldToCopy[curr.next]
+            copy.arb = oldToCopy[curr.arb]
+            curr = curr.next
         
-        return dup_head
-    
-
+        return oldToCopy[head]
 
 
 #{ 
