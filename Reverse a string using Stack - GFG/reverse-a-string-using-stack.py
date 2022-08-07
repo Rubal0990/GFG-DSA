@@ -3,8 +3,15 @@
 
  # } Driver Code Ends
 def reverse(S):
-    while i >= 0:
-        return S[::-1]
+    stack = []
+    for i in S:
+        stack.append(i) 
+    
+    string = ""
+    for i in range(len(stack)):
+        string += stack.pop()
+    
+    return string
 
 #{ 
 #Driver Code Starts.
