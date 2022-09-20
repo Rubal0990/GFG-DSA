@@ -1,24 +1,27 @@
 def countRev(s):
-    ans = 0
-    right = 0
+    lenn = len(s)
+    stk = []
     
-    for i in s:
-        if i == "{":
-            right += 1
-        
-        else:
-            if right != 0:
-                right -= 1
-            
-            else:
-                ans += 1
-                right += 1
-
-    if right%2 != 0:
+    if lenn%2 != 0:
         return -1
-    else:
-        ans += right // 2
-        return ans
+    
+    for i in range(lenn):
+        if s[i] == '}' and len(stk):
+            if stk[0] == '{':
+                stk.pop(0)
+            else:
+                stk.insert(0, s[i])
+            
+        else:
+            stk.insert(0, s[i])
+
+    red_len = len(stk)
+    n = 0
+    while (len(stk)and stk[0] == '{'):
+        stk.pop(0)
+        n += 1
+
+    return (red_len // 2 + n % 2)
 
 
 #{ 
