@@ -2,10 +2,21 @@
 
 class Solution:
     def sortBySetBitCount(self, arr, n):
-        arr.sort(key=lambda x:(str(bin(x).replace('0b','')).count('1')),reverse=True)
+        dic = {}
+        for i in range(n):
+            num = bin(arr[i]).count('1')
+            dic[i] = num
+        
+        dic = sorted(dic.items(), key=lambda item:item[1], reverse=True)
+        li = []
+        for i in dic:
+            li.append(arr[i[0]])
+        
+        arr[::] = li[::]
+
 
 #{ 
-#  Driver Code Starts
+ # Driver Code Starts
 #Initial Template for Python 3
 
 def main():
