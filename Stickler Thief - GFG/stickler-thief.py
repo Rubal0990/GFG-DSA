@@ -1,27 +1,27 @@
 #User function Template for python3
 
-class Solution:  
-    
-    #Function to find the maximum money the thief can get.
-    def FindMaxSum(self,a, n):
+class Solution: 
+    def FindMaxSum(self, a, n):
         if n == 0:
-            return 0
+            return -1
+        
         if n == 1:
             return a[0]
+        
         if n == 2:
             return max(a[0], a[1])
-            
-        sum_of_loot = n * [0]
+        
+        sum_of_loot = [0] * n
         sum_of_loot[0] = a[0]
         sum_of_loot[1] = max(a[0], a[1])
         for i in range(2, n):
             sum_of_loot[i] = max(a[i] + sum_of_loot[i-2], sum_of_loot[i-1])
         
         return sum_of_loot[n-1]
-            
+
 
 #{ 
-#  Driver Code Starts
+ # Driver Code Starts
 #Initial Template for Python 3
 import atexit
 import io
