@@ -10,8 +10,8 @@ class Solution:
             total += arr[i]
             
             if total in dict1.keys():
+                count += dict1[total]
                 dict1[total] += 1
-                count += dict1[total] - 1
             else:
                 dict1[total] = 1
         
