@@ -1,5 +1,5 @@
 # Bit Difference
-## Medium 
+## Basic 
 <div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">You are given two numbers <strong>A</strong> and <strong>B</strong>. The task is&nbsp;to <strong>count the number of bits needed to be flipped </strong>to <strong>convert </strong>A to B.</span><br>
 <br>
 <span style="font-size:18px"><strong>Example 1</strong></span><span style="font-size:18px"><strong>:</strong></span></p>
