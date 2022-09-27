@@ -1,17 +1,14 @@
 #User function Template for python3
 
-def dectobin(n):
-   return bin(n).replace("0b","")
-
 class Solution:
     def findPosition(self, N):
-        n=dectobin(N)
-        count=0
+        n = bin(N).replace("0b","")
+        count = 0
         
         for i in n:
-            if i=="1":
-                count+=1
-                
+            if i == "1":
+                count += 1
+        
         if count == 1:
             return len(n)
         else:
