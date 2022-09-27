@@ -36,30 +36,3 @@ remainder as 3.</span></pre>
 
 <div><span style="font-size:18px">-10^9 &lt;= a,b &lt;= 10^9</span></div>
 </div>
-<p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
-
-<pre><span style="font-size:18px"><strong>Input</strong>: 
-S1 = "zyxwvutsrqponmlkjihgfedcba"
-S2 = "a"
-<strong>Output</strong>: 
-25
-<strong>Explanation</strong>:
-'a' is at index 25. So, the time taken
-to type 'a' will be abs(0-25) = 25.</span>
-</pre>
-
-<p><br>
-<strong><span style="font-size:18px">Your Task:</span></strong><br>
-<span style="font-size:18px">You don't need to read input or print anything.&nbsp;You only need to complete the function<strong> findTime()&nbsp;</strong>that takes two strings S1, and S2 as input and returns an integer denoting time taken to type the string S2.</span></p>
-
-<p><br>
-<span style="font-size:18px"><strong>Expected Time Complexity:</strong> &nbsp;O(|S2|)<br>
-<strong>Expected Auxilliary Space:</strong> O(1)</span><br>
-&nbsp;</p>
-
-<p><span style="font-size:18px"><strong>Constraints:</strong></span><br>
-<span style="font-size:18px">1 &lt; |S2| &lt; 10<sup>5</sup><br>
-Length of S1 is 26<br>
-S1 contains all 26 alphabets in lower case</span></p>
- <p></p>
-            </div>
