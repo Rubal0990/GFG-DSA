@@ -10,12 +10,8 @@ class Solution:
             		for j in range(i, r+1, i):
                 		if j%i == 0:
                     			arr[j] += i
-        
-		count = 0
-		for i in range(l, r+1):
-            		count += arr[i]
-        
-		return count
+		
+		return sum(arr[l:r+1])
 
 
 
