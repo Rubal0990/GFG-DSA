@@ -2,22 +2,22 @@
 
 class Solution:
 	def reverseInGroups(self, arr, n, k):
-        def helper(arr):
-            return arr[::-1]
-        
-        num = N//K + 1
-        l = 0
-        r = K
-        while num > 0:
-            num -= 1
-            arr[l:r] = helper(arr[l:r])
-            l = r
-            if num == 1:
-                r += N%K    
-            else:
-                r += K
-        
-        return arr
+		def helper(arr):
+		    return arr[::-1]
+
+		num = N//K + 1
+		l = 0
+		r = K
+		while num > 0:
+		    num -= 1
+		    arr[l:r] = helper(arr[l:r])
+		    l = r
+		    if num == 1:
+			r += N%K    
+		    else:
+			r += K
+
+		return arr
 
 
 #{ 
