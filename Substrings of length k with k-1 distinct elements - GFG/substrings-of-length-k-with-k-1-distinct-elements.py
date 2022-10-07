@@ -8,7 +8,7 @@ class Solution:
         for c in range(K):
             hashmap[S[c]] += 1
         
-        for i in range(K,len(S)):
+        for i in range(K, len(S)):
             if len(hashmap) == K-1:
                 res += 1
             
