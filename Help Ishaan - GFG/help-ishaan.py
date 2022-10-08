@@ -13,23 +13,23 @@ class Solution:
         
         return True
 	
-	def NthTerm(self, N):
-		x, y = N, N
-		
-		while x > 1:
-            if self.isPrime(x):
-                break
-            x -= 1
-        
-        while True:
-            if self.isPrime(y):
-                break
-            y += 1
-        
-        if not self.isPrime(x):
-            return y - N
-        
-        return min(abs(N-x), abs(N-y))
+    def NthTerm(self, N):
+	x, y = N, N
+
+	while x > 1:
+	    if self.isPrime(x):
+		break
+	    x -= 1
+
+	while True:
+	    if self.isPrime(y):
+		break
+	    y += 1
+
+	if not self.isPrime(x):
+	    return y - N
+
+	return min(abs(N-x), abs(N-y))
 	        
 
 
