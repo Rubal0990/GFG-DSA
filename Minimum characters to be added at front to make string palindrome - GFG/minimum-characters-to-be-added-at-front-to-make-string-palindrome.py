@@ -1,20 +1,24 @@
 class Solution:
     def minChar(self, str):
-        n = len(str)
-        i = 0
-        j = n-1
-        ans = n-1
+        n = len(s)
+        r = s[::-1]
+        lps = [0] * (n+1)
+        i, length = 0, 0
         
-        while i < j:
-            if str[i] == str[j]:
+        while i < n:
+            if r[i] == s[length]:
+                length += 1
+                lps[i+1] = length
                 i += 1
-                j -= 1
+            
             else:
-                i = 0
-                ans -= 1
-                j = ans
+                if length == 0:
+                    lps[i+1] = 0
+                    i += 1
+                else:
+                    length = lps[length-1]
         
-        return n - (ans + 1)
+        return n-lps[-1]
 
 
 #{ 
