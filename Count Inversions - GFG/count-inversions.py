@@ -1,44 +1,58 @@
+
 class Solution:
-    def mergesort(self,arr,n,inv):
-        if n == 1:
-            return 0
+    def inversionCount(self, arr, n):
+        result = self.merge_sort(arr, 0, n-1)
         
-        mid = n // 2
-        l = arr[:mid]
-        r = arr[mid:]
-        LeftLen = len(l)
-        RightLen = len(r)
-        inv += self.mergesort(l, LeftLen, inv) + self.mergesort(r, RightLen, inv)
-        i, j, k = 0, 0, 0
+        return result
+
+    def merge_sort(self,arr,left,right):
+        result = 0
         
-        while i < LeftLen and j < RightLen:
+        if left < right:
+            mid = (left + right) // 2
+            result += self.merge_sort(arr, left, mid)
+            result += self.merge_sort(arr, mid+1, right)
+            result += self.merge(arr, left, mid, right)
+        
+        return result
+
+    def merge(self,arr,left,mid,right):
+        l = arr[left: mid+1]
+        r = arr[mid+1: right+1]
+        i = 0
+        j = 0
+        k = left
+        count = 0
+        n1 = len(l)
+        n2 = len(r)
+        
+        while i < len(l) and j < len(r):
             if l[i] <= r[j]:
                 arr[k] = l[i]
+                k += 1
                 i += 1
+            
             else:
                 arr[k] = r[j]
                 j += 1
-                inv += mid - i
-            k += 1
-            
-        while i < LeftLen:
+                k += 1
+                count += n1-i
+        
+        while i < n1:
             arr[k] = l[i]
             i += 1
             k += 1
-            
-        while j < RightLen:
+        
+        while j < n2:
             arr[k] = r[j]
             j += 1
             k += 1
-            
-        return inv
         
-    def inversionCount(self, arr, n):
-        inv = 0
-        return self.mergesort(arr, n, inv)
+        return count
+
 
 #{ 
-#  Driver Code Starts
+ # Driver Code Starts
 #Initial Template for Python 3
 
 import atexit
