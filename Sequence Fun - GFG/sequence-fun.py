@@ -2,8 +2,8 @@
 
 class Solution:
 	def NthTerm(self, n):
-		mod = 10**9 + 7
-		sum = 1 
+	    mod = 10**9 + 7
+	    sum = 1 
 		    
 	    for i in range(1, n+1):
 	        sum = ((sum* i)%mod + 1)%mod
