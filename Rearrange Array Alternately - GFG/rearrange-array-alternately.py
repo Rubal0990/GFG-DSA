@@ -1,24 +1,17 @@
 #User function Template for python3
 class Solution:
-    ##Complete this function
-    #Function to rearrange  the array elements alternately.
-    def rearrange(self,arr, n): 
-        temp = n*[None]
-        s, l = 0, n-1
-        flag = True
-    
-        for i in range(n):
-            if flag is True:
-                temp[i] = arr[l]
-                l -= 1
-            else:
-                temp[i] = arr[s]
-                s += 1
-    
-            flag = bool(1-flag)
-    
-        for i in range(n):
-            arr[i] = temp[i]
+    def rearrange(self, arr, n): 
+        a = sorted(arr)
+        i = 0
+        j = n - 1
+        
+        for x in range(0, n, 2):
+            arr[x] = a[j]
+            if x + 1 <= n - 1:
+                arr[x+1] = a[i]
+                j -= 1
+                i += 1
+        
         return arr
 
 #{ 
