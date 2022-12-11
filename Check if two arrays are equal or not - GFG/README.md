@@ -1,4 +1,4 @@
-# Check if two arrays are equal or no
+# Check if two arrays are equal or not
 ## Basic 
 <div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given two arrays <strong>A</strong> and <strong>B</strong> of equal size <strong>N</strong>, the task is to find if given arrays are equal or not. Two arrays are said to be equal if both of them contain same set of elements, arrangements (or permutation) of elements may be different though.<br>
 <strong>Note :</strong>&nbsp;If there are repetitions, then counts of repeated elements must also be same for two array to be equal.</span></p>
