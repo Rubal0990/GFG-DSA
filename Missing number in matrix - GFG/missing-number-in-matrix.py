@@ -3,8 +3,8 @@ import numpy as np
 
 class Solution:
 	def MissingNo(self, M):
-		M = np.array(M)
-      	SR = M.sum(axis=0)
+	    M = np.array(M)
+      	    SR = M.sum(axis=0)
             SC = M.sum(axis=1)
             zr, zc, X = np.argmin(SR), np.argmin(SC), SR.max()
             add = X - SR[zr]
