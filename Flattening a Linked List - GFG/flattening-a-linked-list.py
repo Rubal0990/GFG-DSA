@@ -10,51 +10,51 @@ class Node:
         self.bottom=None
         
 '''
-def mergeList(headA, headB):
-    fh = None
-    ft = None
+class Solution():
+    def mergeList(headA, headB):
+        fh = None
+        ft = None
     
-    while headA!=None and headB!=None:
-        if fh == None:
-            if headA.data < headB.data:
-                fh = headA
-                ft = headA
-                headA = headA.bottom
+        while headA!=None and headB!=None:
+            if fh == None:
+                if headA.data < headB.data:
+                    fh = headA
+                    ft = headA
+                    headA = headA.bottom
+            
+                else:
+                    fh = headB
+                    ft = headB
+                    headB = headB.bottom
             
             else:
-                fh = headB
-                ft = headB
-                headB = headB.bottom
+                if headA.data < headB.data:
+                    ft.bottom = headA
+                    headA = headA.bottom
+                    ft = ft.bottom
             
-        else:
-            if headA.data < headB.data:
-                ft.bottom = headA
-                headA = headA.bottom
-                ft = ft.bottom
-            
-            else:
-                ft.bottom = headB
-                headB = headB.bottom
-                ft = ft.bottom
+                else:
+                    ft.bottom = headB
+                    headB = headB.bottom
+                    ft = ft.bottom
     
-    if headA:
-        ft.bottom = headA
+        if headA:
+            ft.bottom = headA
     
-    if headB:
-        ft.bottom = headB
+        if headB:
+            ft.bottom = headB
     
-    return fh
+        return fh
 
 
-def flatten(root):
-    if root == None:
-        return
+    def flatten(root):
+        if root == None:
+            return
     
-    if root.next == None:
-        return root
+        if root.next == None:
+            return root
     
-    return mergeList(root, flatten(root.next))
-
+        return mergeList(root, flatten(root.next))
 
 
 #{ 
