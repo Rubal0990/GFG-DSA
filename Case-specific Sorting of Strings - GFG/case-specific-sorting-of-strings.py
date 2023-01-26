@@ -1,30 +1,37 @@
 #User function Template for python3
 
 class Solution:
-    def caseSort(self,s,n):
-        su = []
-        sl = []
+    def caseSort(self, s, n):
+        low = []
+        high = []
+        val = []
+        l = 0
+        h = 0
         
         for i in s:
-            if i.isupper():
-                su.append(i)
+            if i.islower():
+                low.append(i)
+                val.append(True)
             
             else:
-                sl.append(i)
+                high.append(i)
+                val.append(False)
         
-        su.sort()
-        sl.sort()
+        low.sort()
+        high.sort()
+        x = ""
+        for i in range(len(low)):
+            x += low[i]
+        
         ans = ""
-        j, k = 0, 0
-        
-        for i in range(len(s)):
-            if s[i].isupper():
-                ans += su[j]
-                j += 1
+        for i in s:
+            if i.islower():
+                ans += low[l]
+                l += 1
             
             else:
-                ans += sl[k]
-                k += 1
+                ans  += high[h]
+                h += 1
         
         return ans
 
