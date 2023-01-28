@@ -33,8 +33,8 @@ Already same.</span></pre>
 <p><span style="font-size:18px"><strong>Your Task:</strong><br>
 You don't need to read, input, or print anything. Your task is to complete the function <strong><em>solve( )</em>,&nbsp;</strong>which takes two integers <strong>a</strong> and <strong>b&nbsp;</strong>as input parameters and returns the answer.</span></p>
 
-<h2>Expected Time Complexity:&nbsp;O(1)<br>
-Expected Auxiliary Space:&nbsp;O(1)</h2>
+<h4>Expected Time Complexity:&nbsp;O(1)<br>
+Expected Auxiliary Space:&nbsp;O(1)</h4>
 
 <p><span style="font-size:18px"><strong>Constraints:</strong><br>
 0 ≤ a, b ≤ 10<sup>9</sup></span></p>
