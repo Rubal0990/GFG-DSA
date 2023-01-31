@@ -1,7 +1,6 @@
 # Minimum times A has to be repeated such that B is a substring of it
 ## Medium 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given two strings <strong>A </strong>and<strong> B. </strong>Find minimum number of times A has to be repeated such that B is a Substring of it. If <strong>B</strong> can never be a substring then return <strong>-1</strong>.</span></p>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given two strings <strong>A </strong>and<strong> B. </strong>Find minimum number of times A has to be repeated such that B is a Substring of it. If <strong>B</strong> can never be a substring then return <strong>-1</strong>.</span></p>
 
 <p>&nbsp;</p>
 
@@ -13,7 +12,7 @@ B = "cdabcdab"
 <strong>Output:
 </strong>3
 <strong>Explanation:</strong>
-</span><span style="font-size:18px">Repeating A three times (“abcdabcdabcd”),
+</span><span style="font-size:18px">Repeating A three times (abcdabcdabcd),
 B is a substring of it. B is not a substring
 of A when it is repeated less than 3 times.</span>
 </pre>
@@ -43,5 +42,4 @@ You don't need to read input or print anything. Your task is to complete the fun
 1 ≤ |A|, |B| ≤ 10<sup>3</sup></span></div>
 
 <div><span style="font-size:18px">String A and B consists of lower case alphabets</span></div>
- <p></p>
-            </div>
+</div>
