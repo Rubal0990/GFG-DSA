@@ -1,8 +1,8 @@
 #User function Template for python3
 
 class Solution:
-	def findMaxSum(self, arr, n):
-		for i in range(2, n):
+    def findMaxSum(self, arr, n):
+        for i in range(2, n):
             if i - 3 >= 0:
                 t = max(arr[i-2], arr[i-3])
             
