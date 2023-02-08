@@ -16,15 +16,7 @@ arr =
  {3, 2}}
 <strong>Output: </strong>4 2 1<strong>
 Explanation: 
-</strong>After 1st Operation, all the 2nd row
-and all the 2nd column will be filled by
-1. So remaning cell with value 0 will be 4
-After 2nd Operation, all the 2nd row and all
-the 3rd column will be filled by 1. So 
-remaning cell with value 0 will be 2<strong>.
-</strong>After 3rd Operation cells having value 0 will
-be 1.</span>
-</pre>
+</strong>After 1st Operation, all the 2nd row and all the 2nd column will be filled by 1. So remaning cell with value 0 will be 4 After 2nd Operation, all the 2nd row and all the 3rd column will be filled by 1. So remaning cell with value 0 will be 2<strong>. </strong>After 3rd Operation cells having value 0 will be 1.</span></pre>
 
 <p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
 
@@ -35,18 +27,11 @@ arr =
  {1, 1}}
 <strong>Output: </strong>1 0
 <strong>Explanation: 
-</strong>After 1st Operation, all the 1st row and 
-all the 2nd column will be filled by 1. 
-So remaning cell with value 0 will be 1.
-After 2nd Operation, all the 1st row and 
-all the 1st column will be filled by 1. 
-So remaning cell with value 0 will be 0<strong>. </strong></span>
+</strong>After 1st Operation, all the 1st row and all the 2nd column will be filled by 1. So remaning cell with value 0 will be 1. After 2nd Operation, all the 1st row and all the 1st column will be filled by 1. So remaning cell with value 0 will be 0<strong>. </strong></span>
 </pre>
 
 <p><span style="font-size:18px"><strong>Your&nbsp;Task:</strong><br>
-The task is to complete the function <strong>countZero</strong>(), which takes parameter&nbsp;<strong>n,&nbsp;</strong>size of<br>
-the matrix, k no of operation and array <strong>arr[][],&nbsp;</strong>which denotes the position of the cells.</span><br>
-<span style="font-size:18px">You have to return an array that contains all the results.</span></p>
+The task is to complete the function <strong>countZero</strong>(), which takes parameter&nbsp;<strong>n,&nbsp;</strong>size of the matrix, k no of operation and array <strong>arr[][],&nbsp;</strong>which denotes the position of the cells.</span><span style="font-size:18px">You have to return an array that contains all the results.</span></p>
 
 <p><span style="font-size:18px"><strong>Expected Time Complexity: </strong>O( k ).<br>
 <strong>Expected Auxiliary Space:</strong> O( n+n+k ).</span></p>
