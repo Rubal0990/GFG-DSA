@@ -1,6 +1,6 @@
 # Arithmetic Number
 ## Easy
-<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given three integers &nbsp;'<strong>A</strong>' denoting the first term of an arithmetic sequence , '<strong>C</strong>' denoting the common difference&nbsp;of an arithmetic sequence and an integer '<strong>B</strong>'. you need to tell whether 'B' exists in the arithmetic sequence or not.</span></p>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given three integers &nbsp;'<strong>A</strong>' denoting the first term of an arithmetic sequence , '<strong>C</strong>' denoting the common difference&nbsp;of an arithmetic sequence and an integer '<strong>B</strong>'. you need to tell whether 'B' exists in the arithmetic sequence or not. Return 1 if B is present in the sequence. Otherwise, returns 0.</span></p>
 
 <p><strong><span style="font-size:18px">Example 1:</span></strong></p>
 
