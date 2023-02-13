@@ -7,15 +7,18 @@ class Solution:
                 return 1
             else:
                 return 0
+        
+        z = ((B - A) / C) + 1
+        if z <= 0:
+            return 0
+        
         else:
-            if (B-A)/C < 0:
+            z = (z * 10)
+            
+            if z % 10 == 0:
+                return 1
+            else: 
                 return 0
-           
-            else:
-                if (B-A)%C == 0:
-                    return 1
-                else:
-                   return 0
 
 
 #{ 
