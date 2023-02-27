@@ -1,47 +1,73 @@
-#User function Template for python3
-from math import sqrt
+
+from typing import Optional
+
+"""
+
+Definition for singly Link List Node
+class Node:
+    def __init__(self,x):
+        self.data=x
+        self.next=None
+
+You can also use the following for printing the link list.
+printList(node)
+"""
 
 class Solution:
-	def threeDivisors(self, query, q):
-	    m = int(sqrt(max(query)))
-	    prime = [True] * (m + 1)
-	    prime[0], prime[1] = False, False
-	    
-	    for i in range(2, len(prime)):
-	        if not prime[i]:
-	            continue
-	        
-	        for j in range(i*i, len(prime), i):
-	            prime[j] = False
-	    
-	    prime = [i for i, e in enumerate(prime) if e]
-	    
-	    ans = [0] * q
-	    for i in range(q):
-	        for k in prime:
-	            if k*k > query[i]:
-	                break
-	            
-	            ans[i] += 1
-	    
-	    return ans
+    def reverse(self, head : Optional['Node'], k : int) -> Optional['Node']:
+        cur = head
+        dummy = Node(0)
+        
+        while k > 0:
+            t, cur = cur, cur.next
+            dummy.next, t.next = t, dummy.next
+            k -= 1
+        
+        while cur:
+            t, cur = cur, cur.next
+            head.next, t.next = t, head.next
+        
+        return dummy.next
+        
+
 
 
 #{ 
  # Driver Code Starts
-#Initial Template for Python 3
 
-if __name__ == '__main__':
-	T=int(input())
-	for i in range(T):
-		q = int(input())
-		query = []
-		for _ in range(q):
-			query.append(int(input()))
-		
-		ob = Solution()
-		ans = ob.threeDivisors(query,q)
-		for a in ans:
-			print(a)
+class Node:
+    def __init__(self,x):
+        self.data=x
+        self.next=None
+
+def printList(node):
+    while (node != None):
+        print(node.data,end=" ")
+        node = node.next
+    print()
+def inputList():
+    n=int(input())#lenght of link list
+    data=[int(i) for i in input().strip().split()]#all data of linked list in a line
+    head = Node(data[0])
+    tail = head;
+    for i in range(1,n):
+        tail.next = Node(data[i]);
+        tail = tail.next;
+    return head;
+
+if __name__=="__main__":
+    t = int(input())
+    for _ in range(t):
+        
+        head = inputList()
+        
+        
+        k = int(input())
+        
+        obj = Solution()
+        res = obj.reverse(head, k)
+        
+        printList(res)
+        
 
 # } Driver Code Ends
