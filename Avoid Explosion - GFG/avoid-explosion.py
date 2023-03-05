@@ -16,8 +16,7 @@ class Solution:
                 i = arr[i]
             
             return i
-            
-
+        
         ans = []
         for x, y in mix:
             rx, ry = find(x), find(y)
