@@ -5,19 +5,25 @@ class Solution:
     def subArraySum(self, arr, n, s): 
         l = 0
         c_sum = 0
+        
+        if s == 0:
+            return [-1]
+        
         for r in range(n):
-            c_sum = c_sum + arr[r]
-    
+            c_sum += arr[r]
+            
             while c_sum > s:
-                c_sum = c_sum - arr[l]
+                c_sum -= arr[l]
                 l += 1
+            
             if c_sum == s:
-                return (l + 1, r + 1)
+                return [l + 1, r + 1]
     
         return [-1] 
 
+
 #{ 
-#  Driver Code Starts
+ # Driver Code Starts
 #Initial Template for Python 3
 
 import math
