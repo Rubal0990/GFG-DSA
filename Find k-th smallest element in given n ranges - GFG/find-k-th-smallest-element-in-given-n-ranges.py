@@ -2,26 +2,43 @@ from typing import List
 
 class Solution:
     def kthSmallestNum(self, n : int, ranges : List[List[int]], q : int, queries : List[int]) -> List[int]:
-        se = set()
-        for i in range(n):
-            for j in range(ranges[i][0], ranges[i][1]+1):
-                se.add(j)
+        ranges.sort()
+        skip = [0] * n
+        count = [0] * n
+        if ranges[0][0] > 1:
+            skip[0] = ranges[0][0] - 1
         
-        li = list(se)
-        li.sort()
-        ji = []
-        
-        for i in queries:
-            if i > len(li):
-                ji.append(-1)
+        count[0] = ranges[0][1] - ranges[0][0] + 1
+        for i in range(1, n):
+            gap = ranges[i][0] - ranges[i - 1][1] - 1
+            skip[i] = skip[i - 1] + max(0, gap)
+            count[i] = count[i - 1]
+            
+            if ranges[i - 1][1] >= ranges[i][0]:
+                count[i] += ranges[i][1] - ranges[i - 1][1] + 1
+            
             else:
-                ji.append(li[i-1])
+                count[i] += ranges[i][1] - ranges[i][0] + 1
         
-        return ji
+        ans = [-1] * q
+        for i in range(q):
+            idx = -1
+            
+            for j in range(n):
+                if queries[i] <= count[j]:
+                    idx = j
+                    break
+            
+            if idx != -1:
+                ans[i] = skip[idx] + queries[i]
+            
+        return ans
 
 
 #{ 
  # Driver Code Starts
+
+
 class IntMatrix:
     def __init__(self) -> None:
         pass
