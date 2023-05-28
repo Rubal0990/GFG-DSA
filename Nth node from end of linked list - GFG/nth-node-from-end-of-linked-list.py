@@ -15,31 +15,30 @@
 	}
 '''
 #Function to find the data of nth node from the end of a linked list
-
 def getNthFromLast(head,n):
     curr = head
-    count = 0
-    
-    while curr:
-        count += 1
+    cnt = 0
+    for i in range(n):
         curr = curr.next
+        cnt += 1
+        if curr == None:
+            break
     
-    if count < n:
+    if cnt < n:
         return -1
     
-    res = count - n
-    temp = head
-    while res > 0:
-        res -= 1
-        temp = temp.next
-        
-    return temp.data
+    prev = head
+    while curr != None:
+        curr = curr.next
+        prev = prev.next
+    
+    return prev.data
 
 
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3
-#Contributed by : Nagendra Jha
+
 
 import atexit
 import io
