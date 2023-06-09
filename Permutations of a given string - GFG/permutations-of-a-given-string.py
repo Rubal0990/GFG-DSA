@@ -1,29 +1,17 @@
 #User function Template for python3
+from itertools import permutations
 
 class Solution:
     def find_permutation(self, S):
-        if len(S)==1:
-            return [S]
+        s = permutations(S)
+        li = ["".join(i) for i in s]
+        lis = list(set(li))
+        lis.sort()
         
-        perms = self.find_permutation(S[1:])
-        
-        char = S[0]
-        result = []
-        for perm in perms:
-            for i in range(len(perm)+1):
-                result.append(perm[:i]+char+perm[i:])
-
-        result.sort()
-        ans = []
-        for i in result:
-            if i not in ans:
-                ans.append(i)
-     
-        return ans
-
+        return lis
 
 #{ 
-#  Driver Code Starts
+ # Driver Code Starts
 #Initial Template for Python 3
 
 
