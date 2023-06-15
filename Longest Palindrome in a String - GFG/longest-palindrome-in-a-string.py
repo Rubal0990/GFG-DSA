@@ -3,21 +3,21 @@
 class Solution:
     def extendPalindrome(self, S, low, high, length):
         while low >= 0 and high < length:
-           
             if S[low] == S[high]:
                 low -= 1
                 high += 1
+            
             else:
                 break
             
-        return (high-low-1);
-       
+        return (high-low-1)
+    
     def longestPalin(self, S):
         lenS = len(S)
         vMaxLength = 1
         vCurrLength =- 1
         vTup = (0, 0)
-
+        
         for i in range(0, lenS, 1):
             vCurrLength = self.extendPalindrome(S, i, i, lenS)
             if vCurrLength > vMaxLength:
@@ -32,10 +32,10 @@ class Solution:
                
         vOut = S[vTup[0]:vTup[1] + 1]
         return vOut
-       
+
 
 #{ 
-#  Driver Code Starts
+ # Driver Code Starts
 #Initial Template for Python 3
 
 if __name__ == '__main__':
