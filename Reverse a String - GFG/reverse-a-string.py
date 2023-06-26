@@ -1,7 +1,10 @@
 #User function Template for python3
 
 def reverseWord(s):
-    return s[::-1]
+    if len(s) <= 1:
+        return s
+    
+    return reverseWord(s[1:]) + s[0]
 
 #{ 
 #  Driver Code Starts

@@ -1,6 +1,14 @@
 class Solution:
     def findSum(self, A, N): 
-        return min(A) + max(A)
+        mini = float('inf')
+        maxi = float('-inf')
+        
+        for i in A:
+            mini = min(mini, i)
+            maxi = max(maxi, i)
+        
+        return mini + maxi
+
 
 #{ 
  # Driver Code Starts
