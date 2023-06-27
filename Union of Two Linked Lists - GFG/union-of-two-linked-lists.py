@@ -17,8 +17,8 @@ class Solution:
         temp = ans
         
         for i in l:
-            temp.next=Node(i)
-            temp=temp.next
+            temp.next = Node(i)
+            temp = temp.next
         
         return ans.next
 
