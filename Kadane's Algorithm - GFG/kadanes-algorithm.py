@@ -12,10 +12,10 @@ class Solution:
                 sumc = 0
                 
         return ans
-            
+
 
 #{ 
-#  Driver Code Starts
+ # Driver Code Starts
 #Initial Template for Python 3
 
 import math
