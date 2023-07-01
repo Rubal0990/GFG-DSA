@@ -1,12 +1,14 @@
 #User function Template for python3
+
 class Solution:
 	def setBits(self, N):
-	    cnt = 0
-	    while N != 0:
-	        N = N & (N-1)
-	        cnt += 1
-	    
-	    return cnt
+		cnt = 0
+        
+        while N != 0:
+            N = N & (N-1)
+            cnt += 1
+        
+        return cnt
 
 
 #{ 
