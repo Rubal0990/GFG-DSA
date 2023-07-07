@@ -1,31 +1,33 @@
 #User function Template for python3
 
 class Solution:
-    def merge(self, arr1, arr2, n, m): 
-        for i in arr2:
-            arr1.append(i)
-            
-        arr2.clear()
-        arr2 = arr1.sort()
+    def merge(self, arr1, arr2, n, m):
+        i = n - 1
+        j = 0
+        while i >= 0 and j < m:
+            if arr1[i] < arr2[j]:
+                break
+            else:
+                arr1[i], arr2[j] = arr2[j], arr1[i]
+                i -= 1
+                j += 1
         
-        return arr2
+        arr1.sort()
+        arr2.sort()
+    
 
 #{ 
-#  Driver Code Starts
-#Initial Template for Python 3
+ # Driver Code Starts
+#Initial template for Python
 
-if __name__ == "__main__": 		
-    tc=int(input())
-    while tc > 0:
-        n, m=map(int, (input().strip().split()))
-        arr1=list(map(int , input().strip().split()))
-        arr2=list(map(int , input().strip().split()))
-        ob = Solution()
-        ans=ob.merge(arr1, arr2, n, m)
-        for x in arr1:
-            print(x, end=" ")
-        for x in arr2:
-            print(x, end=" ")
-        print()
-        tc=tc-1
+if __name__ == '__main__':
+    t = int(input())
+    for tt in range(t):
+        n,m = map(int, input().strip().split())
+        arr1 = list(map(int, input().strip().split()))
+        arr2 = list(map(int, input().strip().split()))
+        ob=Solution()
+        ob.merge(arr1, arr2, n, m)
+        print(*arr1,end=" ")
+        print(*arr2)
 # } Driver Code Ends
