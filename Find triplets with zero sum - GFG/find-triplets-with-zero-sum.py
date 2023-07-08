@@ -4,7 +4,7 @@ class Solution:
     def findTriplets(self, arr, n):
         arr.sort()
         
-        for i in range(n-2):
+        for i in range(n - 2):
             l = i + 1
             r = n - 1
             
