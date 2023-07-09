@@ -3,14 +3,21 @@
 class Solution:
     def missingNumber(self, arr, n):
         arr.sort()
-        ans = 1
+        a = m = 1
         
-        for i in range(n):
-            if arr[i] == ans:
-                ans += 1
+        for i in arr:
+            if i > 0:
+                if i == a:
+                   m = a
+                   a = a + 1
+                
+                elif i == m:
+                    pass
+                
+                else:
+                    break
         
-        return ans
-
+        return a
 
 
 #{ 
