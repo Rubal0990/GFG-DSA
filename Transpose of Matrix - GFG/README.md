@@ -1,5 +1,5 @@
 # Transpose of Matrix
-## Easy
+## Easy 
 <div class="problems_problem_content__Xm_eO"><p><span style="font-size: 18px;">Write a program to find the <strong>transpose </strong>of a square matrix&nbsp;of size N*N. Transpose of a matrix is obtained by changing rows to columns and columns to rows.</span><br><br><span style="font-size: 18px;"><strong>Example 1:</strong></span></p>
 <pre><span style="font-size: 18px;"><strong>Input</strong>:
 N = 4
