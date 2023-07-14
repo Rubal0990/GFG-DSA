@@ -1,79 +1,64 @@
 #User function Template for python3
 
+class TwoStacks:
+    def __init__(self, n=100):
+        self.size = n
+        self.arr = [0] * n
+        self.top1 = -1
+        self.top2 = n
 
-#Function to push an integer into the stack1.
-def push1(a, x):
-    a.insert(0, x)
-    
-#Function to push an integer into the stack2.
-def push2(a,x):
-    a.insert(len(a), x)
-    
-#Function to remove an element from top of the stack1.    
-def pop1(a):
-    if len(a):
-        return a.pop(0)
-    
-    return -1
-    
-#Function to remove an element from top of the stack2.    
-def pop2(a):
-    if len(a):
-        return a.pop(-1)
-    
-    return -1
-    
+    # Function to push an integer into stack 1
+    def push1(self, x):
+        self.top1 += 1
+        self.arr[self.top1] = x
+
+    # Function to push an integer into stack 2
+    def push2(self, x):
+        self.top2 -= 1
+        self.arr[self.top2] = x
+
+    # Function to remove an element from top of stack 1
+    def pop1(self):
+        if self.top1 == -1:
+            return -1
+        
+        self.top1 -= 1
+        return self.arr[self.top1 + 1]
+
+    # Function to remove an element from top of stack 2
+    def pop2(self):
+        if self.top2 == self.size:
+            return -1
+        
+        self.top2 += 1
+        return self.arr[self.top2 - 1]
 
 
 
 #{ 
  # Driver Code Starts
+
 #Initial Template for Python 3
 
-import atexit
-import io
-import sys
-
-#Contributed by : Nagendra Jha
-
-_INPUT_LINES = sys.stdin.read().splitlines()
-input = iter(_INPUT_LINES).__next__
-_OUTPUT_BUFFER = io.StringIO()
-sys.stdout = _OUTPUT_BUFFER
-
-@atexit.register
-
-def write():
-    sys.__stdout__.write(_OUTPUT_BUFFER.getvalue())
-
-top2=101
-top1=-1
-
 if __name__ == '__main__':
-    test_cases = int(input())
-    for cases in range(test_cases) :
-        n = int(input())
-        arr = list(map(int,input().strip().split()))
-        a = [-1 for i in range(101)] # array to be used for the 2 stacks.
-        i=0 # curr index
-        while i<len(arr):
-            if arr[i] == 1:
-                if arr[i+1] == 1:
-                    push1(a,arr[i+2])
-                    i+=1
-                else:
-                    print(pop1(a),end=" ")
-                i+=1
-            else:
-                if arr[i+1] == 1:
-                    push2(a,arr[i+2])
-                    i+=1
-                else:
-                   print(pop2(a),end=" ")
-                i+=1
-            i+=1
-        top2=101
-        top1=-1
-        print(' ')
+    T = int(input())
+    while T > 0:
+        sq = TwoStacks()
+        Q = int(input())
+        while Q > 0:
+            query = list(map(int, input().split()))
+            if query[1] == 1:
+                if query[0] == 1:
+                    sq.push1(query[2])
+                elif query[0] == 2:
+                    sq.push2(query[2])
+            elif query[1] == 2:
+                if query[0] == 1:
+                    print(sq.pop1(), end=' ')
+                elif query[0] == 2:
+                    print(sq.pop2(), end=' ')
+            Q -= 1
+        print()
+        T -= 1
 
 # } Driver Code Ends
