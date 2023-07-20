@@ -1,23 +1,25 @@
 #User function Template for python3
 
 class Solution:
-    def nonrepeatingCharacter(self,s):
+    def nonrepeatingCharacter(self, s):
         d = {}
+        
         for i in range(len(s)):
             if s[i] not in d:
                 d[s[i]] = 0
            
             d[s[i]] +=1
-           
+        
         for i in s:
             if d[i] == 1:
                 return i
                 
+        
         return '$'
-    
+
 
 #{ 
-#  Driver Code Starts
+ # Driver Code Starts
 #Initial Template for Python 3
 
 import atexit
