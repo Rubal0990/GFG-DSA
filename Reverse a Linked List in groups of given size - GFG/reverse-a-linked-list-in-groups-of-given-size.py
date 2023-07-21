@@ -22,7 +22,7 @@ class Solution:
         current = head
         count = 0
         
-        while current!=None and count<k:
+        while current != None and count < k:
             nextN = current.next
             current.next = prevN
             prevN = current
