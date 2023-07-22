@@ -7,27 +7,23 @@
 		        self.next = None
 	
 '''
+from collections import OrderedDict
+
 class Solution:
     def removeDuplicates(self, head):
-        if head==None or head.next==None:
-            return head
+        d = OrderedDict()
+        while head:
+            d[head.data] = 'None'
+            head = head.next
         
-        l = {}
-        curr = head.next
-        prev = head
-        l[head.data] = 1
+        li = [k for k in d.keys()]
+        heads = Node(li[0])
+        k = heads
+        for i in range(1, len(li)):
+            heads.next = Node(li[i])
+            heads = heads.next
         
-        while curr:
-            if curr.data in l:
-                prev.next = curr.next
-            
-            else:
-               l[curr.data] = 1
-               prev = curr
-            
-            curr = curr.next
-        
-        return head
+        return k
 
 
 
