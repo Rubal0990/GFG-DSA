@@ -1,18 +1,16 @@
 class Solution:
     def leaders(self, A, N):
-        n = []
-        inv = A[::-1]
-        start = 0
- 
-        for i in inv :
-            if i >= start:
-                start = i
-                n.append(i)
-                
-        return(n[::-1])
+        maxi = [A[N-1]]
+        
+        for i in range(N-2, -1, -1):
+            if (A[i] >= maxi[-1]):
+                maxi.append(A[i])
+        
+        return maxi[::-1]
+
 
 #{ 
-#  Driver Code Starts
+ # Driver Code Starts
 #Initial Template for Python 3
 
 import math
